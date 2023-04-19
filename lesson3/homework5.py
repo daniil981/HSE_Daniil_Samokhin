@@ -2,6 +2,7 @@ import json
 import os
 import csv
 import codecs
+import re
 import pickle
 
 ####!!!!! Заданиме ещё не готово полностью. Просьба, не проверять до загрузки дз в лмс.
@@ -16,20 +17,15 @@ import pickle
 
 
 def writeCsv(path):
-
-
     f = open('traders.txt', 'r', newline='')
     trInn = (f.readlines())
-
-    for i in trInn:
-        print(i)
 
 
     l = open('traders.json', 'r')
     data = json.load(l)
 
     c = 0
-    p = 0
+
 
     os.remove(path)
     header = ['ИНН', 'ОГРН', 'Адрес']
@@ -51,7 +47,7 @@ def writeCsv(path):
                     writer = csv.writer(file)
                     writer.writerow(csvF)
                     file.close()
-                p += 1
+
 
         c += 1
 
@@ -64,4 +60,30 @@ def writeCsv(path):
 
 
 
-writeCsv('D:/Studying/Uni/traders.csv')
+#writeCsv('D:/Studying/Uni/traders.csv')
+
+
+
+
+
+
+
+def findEmail(text):
+    email_pattern = r'\S+@\S+\.\S+[^\W]'
+    emails = re.findall(email_pattern, text)
+    print(emails)
+    return emails
+
+l = open('efrsb_messages.json', 'r')
+data = json.load(l)
+emails = []
+for i in data:
+    emails=findEmail(i["msg_text"])
+
+
+
+
+
+
+
+
