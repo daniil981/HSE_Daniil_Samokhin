@@ -5,8 +5,6 @@ import codecs
 import re
 import pickle
 
-####!!!!! Заданиме ещё не готово полностью. Просьба, не проверять до загрузки дз в лмс.
-
 # Найдите информацию об организациях:
 # Получите список ИНН из файла «traders.txt»;
 # Найдите информацию об организациях с этими ИНН в файле «traders.json»;
@@ -67,23 +65,28 @@ def writeCsv(path):
 
 
 
-
+#2Напишите регулярное выражение для поиска email-адресов в тексте.
 def findEmail(text):
     email_pattern = r'\S+@\S+\.\S+[^\W]'
     emails = re.findall(email_pattern, text)
-    print(emails)
-    return emails
-
-l = open('efrsb_messages.json', 'r')
-data = json.load(l)
-emails = []
-for i in data:
-    emails=findEmail(i["msg_text"])
+    return set(emails)
 
 
 
+def findAllEmail(path):
+    l = open(path, 'r')
+    data = json.load(l)
+
+    emailsSet = {}
+
+    for i in data:
+        em = findEmail(i["msg_text"])
+        emailsSet[i["publisher_inn"]] = em
+    print(emailsSet)
 
 
+
+findAllEmail('efrsb_messages.json')
 
 
 
