@@ -1,0 +1,10 @@
+BEGIN:VEVENT
+DTSTART;TZID=UTC+3:20200514T163000
+DTEND;TZID=UTC+3:20200514T173000
+LOCATION;ALTREP="http://vsrf.ru":\n 121260\, г. Москва\, ул. Поварская\, д.15\,
+TRANSP:TRANSPARENT
+DESCRIPTION:Дело: А40-183194/2015 \n http://kad.arbitr.ru/Card/5fbea45a-9f9a-4d8e-b489-fbfa221361c3#ed\n Суд: Верховный Суд РФ \n http://vsrf.ru
+URL;VALUE=URI:http://kad.arbitr.ru/Card/5fbea45a-9f9a-4d8e-b489-fbfa221361c3#ed
+UID:00000000-0000-0000-0000-000000000000@kad.arbitr.ru
+SUMMARY:Заседание по делу А40-183194/2015 в Верховный Суд РФ. Судья Букина И. А.
+END:VEVENT

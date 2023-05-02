@@ -28,7 +28,7 @@ def writeCsv(path):
     os.remove(path)
     header = ['ИНН', 'ОГРН', 'Адрес']
 
-    with open(path, 'a', encoding='UTF-32', newline='') as file:
+    with open(path, 'a', encoding='utf-8', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(header)
         file.close()
@@ -41,7 +41,7 @@ def writeCsv(path):
                 csvF.append(i['inn'])
                 csvF.append(i['ogrn'])
                 csvF.append(i['address'])
-                with open(path, 'a', encoding="UTF-32", newline='') as file:
+                with open(path, 'a', encoding="utf-8", newline='') as file:
                     writer = csv.writer(file)
                     writer.writerow(csvF)
                     file.close()
@@ -52,13 +52,13 @@ def writeCsv(path):
 
 
     with open(path, 'r') as file:
-        csvreader = csv.reader(codecs.open(path, 'rU', 'utf-32'))
+        csvreader = csv.reader(codecs.open(path, 'rU', 'utf-8'))
         for row in csvreader:
             print(row)
 
 
 
-#writeCsv('D:/Studying/Uni/traders.csv')
+writeCsv('D:/Studying/Uni/traders.csv')
 
 
 
