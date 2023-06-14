@@ -24,8 +24,6 @@ class ParserCBRF:
         with open('parsed_data/currencies.json', 'r', encoding='utf-8') as l:
             file_contents = l.read()
 
-        print(file_contents)
-
         with open('parsed_data/currenciesed.csv', 'w', encoding='utf-8') as d:
            data = json.loads(file_contents)
            writer = csv.writer(d)
