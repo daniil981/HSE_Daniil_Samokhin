@@ -65,7 +65,7 @@ par.deserialize()
 ac.get_currency_value()
 ac.get_currency_info()
 
-ac.clear_mess()
+#ac.clear_mess()
 
 
 
