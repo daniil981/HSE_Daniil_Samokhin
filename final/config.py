@@ -3,7 +3,7 @@ import urllib.request
 
 class Config:
 
-    web = urllib.request.urlopen("https://www.cbr.ru/currency_base/daily/")
+    web = urllib.request.urlopen('https://www.cbr.ru/currency_base/daily/')
     s = web.read()
     table_headers = []
     html = etree.HTML(s)

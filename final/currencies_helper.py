@@ -1,7 +1,4 @@
-
-from lxml import etree
 import csv
-import urllib.request
 import json
 from config import Config
 
